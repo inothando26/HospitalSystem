@@ -29,9 +29,75 @@ public class Patient {
         this.gender = gender;
         this.medicalCondition = medicalCondition;
         this.category = category;
-               
-        
+              
+      
     }
+    
+    //allows controlled access to private fields
+    public String getPatientID() { //returns the value 
+        return patientID;
+    }
+    
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+    
+    public String getFirstName() {
+        return FirstName;
+    }
+    
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+    
+    public String getLastName() {
+        return LastName;
+    }
+    
+    public void setLastName(String LastName ) {
+        this.LastName = LastName;
+    }
+    
+     public int getAge() {
+         return age;
+     }
+     
+     public void setAge(int age) { //age must be positive , if not throw an exception and stop
+         if(age <= 0) {
+             throw new IllegalArgumentException("Age must be greater than 0.");
+         }
+         this.age = age;
+     }
+     
+     public void setGender(String gender) {
+         this.gender = gender;
+     }
+     
+     public String getMedicalCondition() {
+         return medicalCondition;
+     }
+     
+     public void setMedicalCondition(String medicalCondtition) {
+         this.medicalCondition = medicalCondition;
+     }
+     
+     public PatientCategory getCategory() {
+         return category;
+     }
+     
+     public void setCategory(PatientCategory category){
+         this.category = category;
+     }
+     
+     
+     public void displayDetails() { //method will be overridden by inpatient
+         System.out.println("Patient ID            :" + patientID); //Prints all patients details to the cosole 
+         System.out.println("Name                  :" + FirstName + " " + LastName);
+         System.out.println("Age                   :" + age);
+         System.out.println("Gender                :" + gender);
+         System.out.println("Medical Condition     :" + medicalCondition);
+         System.out.println("Category              :" + category);
+     }
     
     
     
